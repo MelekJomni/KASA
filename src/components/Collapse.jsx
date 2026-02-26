@@ -1,44 +1,28 @@
 import { useState } from "react";
 import "../styles/Collapse.css";
+import "../styles/About.css";
 
-export default function Collapse(props) {
+export default function Collapse({ title, children, variant }) {
   const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
 
-  function toggleCollapse() {
-    setIsOpen(!isOpen);
-  }
-
-  function getArrowClass() {
-    if (isOpen) {
-      return "collapse-arrow open";
-    }
-    return "collapse-arrow";
-  }
-
-  function getContentClass() {
-    if (isOpen) {
-      return "collapse-content open";
-    }
-    return "collapse-content";
-  }
+ 
+  const cls = {
+    container: variant === "about" ? "collapse-about" : "collapse",
+    header: variant === "about" ? "collapse-about-header" : "collapse-header",
+    title: variant === "about" ? "collapse-about-title" : "collapse-title",
+    arrow: variant === "about" ? `collapse-about-arrow ${isOpen ? "open" : ""}` : `collapse-arrow ${isOpen ? "open" : ""}`,
+    content: variant === "about" ? `collapse-about-content ${isOpen ? "open" : ""}` : `collapse-content ${isOpen ? "open" : ""}`
+  };
 
   return (
-    <div className="collapse">
-      <button
-        className="collapse-header"
-        onClick={toggleCollapse}
-        aria-expanded={isOpen}
-      >
-        <span className="collapse-title">{props.title}</span>
-
-        <span className={getArrowClass()}>
-          ❯
-        </span>
+    <div className={cls.container}>
+      <button className={cls.header} onClick={toggle} aria-expanded={isOpen}>
+        <span className={cls.title}>{title}</span>
+        <span className={cls.arrow}>❮</span>
       </button>
-
-      <div className={getContentClass()}>
-        {props.children}
-      </div>
+      <div className={cls.content}>{children}</div>
     </div>
   );
 }
+
