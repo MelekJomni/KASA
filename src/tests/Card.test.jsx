@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { MemoryRouter } from "react-router-dom";
-import Card from "./Card";
+import Card from "../components/Card";
 
 const logementMock = {
   id: "123",
@@ -9,8 +9,9 @@ const logementMock = {
   title: "Titre du logement",
 };
 
-describe("Composant Card", () => {
-  it("doit afficher l'image avec le bon src et alt", () => {
+describe("Test du composant Card", () => {
+
+  it("Doit afficher l'image avec le bon src et alt", () => {
     render(
       <MemoryRouter>
         <Card logement={logementMock} />
@@ -22,18 +23,17 @@ describe("Composant Card", () => {
     expect(img).toHaveAttribute("alt", logementMock.title);
   });
 
-  it("doit afficher le titre du logement", () => {
+  it("Doit afficher le titre du logement", () => {
     render(
       <MemoryRouter>
         <Card logement={logementMock} />
       </MemoryRouter>
     );
 
-    const title = screen.getByText(logementMock.title);
-    expect(title).toBeInTheDocument();
+    expect(screen.getByText(logementMock.title)).toBeInTheDocument();
   });
 
-  it("le lien doit pointer vers /logement/id", () => {
+  it("Le lien doit pointer vers /logement/id", () => {
     render(
       <MemoryRouter>
         <Card logement={logementMock} />
@@ -43,4 +43,5 @@ describe("Composant Card", () => {
     const link = screen.getByRole("link");
     expect(link).toHaveAttribute("href", `/logement/${logementMock.id}`);
   });
+
 });
