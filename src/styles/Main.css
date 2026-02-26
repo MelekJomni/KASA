@@ -9,6 +9,7 @@
 
 main {
   max-width: 1440px;
+  min-height: 500px;
   margin: auto;
   padding: 0 40px;
 }
@@ -30,10 +31,13 @@ main {
 .nav {
   display: flex;
   gap: 40px;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: bold;
 }
 
 .nav-link {
-  font-size: 18px;
+  font-size: 24px;
   color: black;
   text-decoration: none;
 }
@@ -268,10 +272,12 @@ main {
   /* ERROR PAGE */
 
   .error-page {
-    width: 100%;         
-    max-width: 1440px;
+             
+    max-width: 768px;
     padding: 0 20px;
+    max-height: 300px;
   }
+  
 
   .error-code {
     font-size: 96px;
@@ -285,4 +291,5 @@ main {
     font-size: 14px;
   }
 }
+
 
