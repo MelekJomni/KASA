@@ -46,7 +46,7 @@
   overflow: hidden;
   border-radius: 0 0 10px 10px;
   transition: max-height 0.3s ease, padding 0.3s ease;
-   
+   margin-bottom: 10%;
   
 }
 
@@ -56,4 +56,5 @@ visibility: visible;
    font-size: 14px;
   
 }
+
 
