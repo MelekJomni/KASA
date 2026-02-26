@@ -2,7 +2,7 @@
   padding: 20px;
   max-width: 1200px;
   margin: auto;
-  font-family:"Montserrat",Arial, Helvetica, sans-serif;
+  font-family:"Montserrat", sans-serif;
 }
 
 .logement-header {
@@ -17,9 +17,13 @@
   max-width: 80%;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 500;
+  margin-top: 3%;
 }
 .location {
   color: black;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 2%
 }
 
 .tags {
@@ -32,7 +36,9 @@
   background-color: #FF6060;
   color: white;
   padding: 5px 20px;
-  font-size: 0.875rem;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: bold;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -132,6 +138,7 @@
   padding: 15px 20px;
   border-radius: 0 0 10px 10px;
   font-size: 18px;
+  margin-bottom: 2%;
 }
 
 
@@ -141,7 +148,7 @@
 @media screen and (max-width: 768px) {
 
   .logement {
-    padding: 0 20px;
+    padding: 0 5px;
   }
 
   /* HEADER LOGEMENT */
@@ -166,7 +173,7 @@
   /* TAGS */
   .tags {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin-top: 10px;
   }
 
@@ -191,8 +198,6 @@
     order: 2;
   }
 
-
-
 .host span {
   font-weight: 500;
   font-size: 12px;
@@ -212,14 +217,13 @@
   .logement-collapses {
     flex-direction: column;
     gap: 4px;
-    margin-bottom: 0; /* ou une petite valeur comme 5px */
+    margin-bottom: 0; 
     padding-bottom: 0;
   
   }
 
   .collapse {
     width: 100%;
-    margin-bottom: 0;
   }
 
   .collapse-header {
@@ -233,5 +237,10 @@
     font-size: 12px;
     padding: 10px;
     border-radius: 0 0 5px 5px;
+    letter-spacing: 0;
+
   }
+  .collapse-arrow {
+  font-size: 16px;
+}
 }
